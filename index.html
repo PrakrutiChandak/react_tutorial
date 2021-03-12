@@ -16,7 +16,8 @@
     <div id="app">
     </div>
     <script type="text/babel">
-        class App extends React.Component { state = { name: 'Prakruti', age: 23 }; handleClick(e){ console.log(e.target) } handleMouseOver(e){ console.log(e.target, e.pageX) } handleCopy(e){ console.log('try being original') } render() { return (
+        class App extends React.Component { state = { name: 'Prakruti', age: 23 }; handleClick = (e) => { this.setState({ name: 'Paridhi' }); console.log(e.target); console.log(this.state);}; handleMouseOver(e){ console.log(e.target, e.pageX) } handleCopy(e){
+        console.log('try being original') } render() { return (
         < div>
             <h1> Hey Whats up ?</h1>
             <p> My name is { this.state.name } and i am { this.state.age } </p>
