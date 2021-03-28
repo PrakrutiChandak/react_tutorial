@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import NavBar from './NavBar';
+import Hero from './Hero';
+import AddHero from './AddHero';
 
 class App extends Component {
 
   state = { 
-    navbars : [
+    heroes : [
       { name: 'Prakruti', age: 23, belt: 'black', id: 1},
       { name: 'Ryu', age: 20, belt: 'green', id: 2},
       { name: 'Crystal', age: 28, belt: 'pink', id: 3},
@@ -16,9 +17,9 @@ class App extends Component {
       div className = "App" >
         <h1> My first react app</h1>
         <p> Welcome :D</p>
-        <NavBar navbars={this.state.navbars } />
+        <Hero heroes={this.state.heroes } />
         <p>------------------------</p>
-      
+        <AddHero />
       </div>
   );
   }
