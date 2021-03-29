@@ -12,14 +12,32 @@ class App extends Component {
     ]
   }
 
+  addHero = (hero) =>{
+    hero.id = Math.random();
+    let heroes = [...this.state.heroes, hero]
+    this.setState({
+      heroes: heroes
+    })
+    console.log(heroes);
+  }
+
+  deleteHero = (id) => {
+    let heroes = this.state.heroes.filter(hero => {
+      return (hero.id !== id)
+    });
+    this.setState({
+      heroes: heroes
+    })
+  }
+
   render(){
     return ( <
       div className = "App" >
         <h1> My first react app</h1>
         <p> Welcome :D</p>
-        <Hero heroes={this.state.heroes } />
+        <Hero deleteHero={this.deleteHero} heroes={this.state.heroes} />
         <p>------------------------</p>
-        <AddHero />
+        <AddHero addHero={this.addHero} />
       </div>
   );
   }
