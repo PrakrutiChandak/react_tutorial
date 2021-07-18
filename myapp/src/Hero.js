@@ -1,4 +1,5 @@
 import React from 'react';
+import './Hero.css'
 
 const Hero = ({ heroes, deleteHero }) => {
     const heroList = heroes.map(hero => {
@@ -18,9 +19,10 @@ const Hero = ({ heroes, deleteHero }) => {
         }
     })
 
-    return (<
-        div className="hero-list" > {heroList} <
-        /div>
+    return (
+        <div className="hero-list"> 
+            {heroList} 
+        </div>
     )
 
 }
